@@ -4,34 +4,37 @@ import ScadeKit
 class SimplyE: SCDApplication {
 
 	var window = SCDLatticeWindow()
-  //var mainAdapter: MainPageAdapter!
+  var mainAdapter: MainPageAdapter!
   var loginPage : LoginPageAdapter!
-  var bookDetail: BookInformationPageAdapter!
-  var settings : SettingsPageAdapter!
-  var booksList : BooksListPageAdapter!
-  var readerSettings: ReaderSettingsPageAdapter!
+  var bookDetail: BookDetailPageAdapter!
+  var searchPage: SearchPageAdapter!
+  var bookWebView: BookWebViewPageAdapter!
+  //var settings : SettingsPageAdapter!
   
 	override func onFinishLaunching() {
 
-		//mainAdapter = MainPageAdapter()
+		mainAdapter = MainPageAdapter()
 		
 		loginPage = LoginPageAdapter()
 		loginPage.load("Login.page")
 		
-		readerSettings = ReaderSettingsPageAdapter()
-		readerSettings.load("ReaderSettings.page")
+		//bookDetail = BookInformationPageAdapter()
 		
-		bookDetail = BookInformationPageAdapter()
-		bookDetail.load("BookInformation.page")
+		//settings = SettingsPageAdapter()
+		//settings.load("settings.page")
 		
-		settings = SettingsPageAdapter()
-		settings.load("settings.page")
+		bookDetail = BookDetailPageAdapter()
+		bookDetail.load("BookDetail.page")
 		
-		booksList = BooksListPageAdapter()
-		booksList.load("BooksList.page")
+		searchPage = SearchPageAdapter()
+		searchPage.load("search.page")
 		
-		//mainAdapter.load("main.page")
+		bookWebView = BookWebViewPageAdapter()
+		bookWebView.load("bookWebView.page")
+		
+		
+		mainAdapter.load("main.page")
+		
 		loginPage.show(view: window)
-		//booksList.show(view: window)
 	}
 }

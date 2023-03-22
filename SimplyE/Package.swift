@@ -1,5 +1,4 @@
 // swift-tools-version:5.3
-
 import PackageDescription
 import Foundation
 
@@ -20,12 +19,12 @@ let package = Package(
         )
     ],
     dependencies: [
-      
+      .package(name: "ScadeExtensions", url: "https://github.com/scade-platform/ScadeExtensions", .branch("main")),  
     ],
     targets: [
         .target(
             name: "SimplyE",
-            dependencies: [],
+            dependencies: ["ScadeExtensions"],
             exclude: ["main.page"],
             swiftSettings: [
                 .unsafeFlags(["-F", SCADE_SDK], .when(platforms: [.macOS, .iOS])),
