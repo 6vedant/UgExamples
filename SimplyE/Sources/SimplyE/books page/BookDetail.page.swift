@@ -1,8 +1,8 @@
-import ScadeKit
 import Dispatch
-#if os(Android)
-	import FoundationNetworking
-#endif
+import ScadeKit
+
+import Foundation
+
 
 class BookDetailPageAdapter: SCDLatticePageAdapter {
 
@@ -19,13 +19,25 @@ class BookDetailPageAdapter: SCDLatticePageAdapter {
     self.toolBarItem1.onClick { _ in
       self.goBack()
     }
-    
+
     self.toolBarItem2.onClick { _ in
-    	self.goToPage()
+      self.goToSearchPage()
     }
-    
-    self.readBookButton.onClick{ _ in
-    	self.navigation?.goWith(page: "bookWebView.page", data: self.book ?? "")
+
+    self.toolBarItem3.onClick { _ in
+      self.goToFavoritesPage()
+    }
+
+    self.toolBarItem4.onClick { _ in
+      self.goToSettingsPage()
+    }
+
+    self.readBookButton.onClick { _ in
+      self.navigation?.goWith(page: "bookWebView.page", data: self.book ?? "")
+    }
+
+    self.favoritedButton.onClick { _ in
+      self.fetchClickedBook()
     }
 
   }
@@ -34,8 +46,8 @@ class BookDetailPageAdapter: SCDLatticePageAdapter {
     super.show(view: view, data: data)
 
     if let book = data as? Book {
-      print("show book: \(book.volumeInfo.title)")
-      
+      //print("show book: \(book.volumeInfo.title)")
+
       self.book = book
 
       lbBookTitle.text = book.volumeInfo.title ?? ""
@@ -60,11 +72,26 @@ class BookDetailPageAdapter: SCDLatticePageAdapter {
   }
 
   func goBack() {
-    self.navigation?.go(page: "main.page", transition: .FROM_LEFT)
+    self.navigation?.go(page: "main.page")
   }
-  
-  func goToPage () {
-  	self.navigation?.go(page: "search.page")
+
+  func goToSearchPage() {
+    self.navigation?.go(page: "search.page")
+  }
+
+  func goToFavoritesPage() {
+    self.navigation?.go(page: "favorited.page")
+  }
+
+  func goToSettingsPage() {
+    self.navigation?.go(page: "settings.page")
+  }
+
+  private func fetchClickedBook() {
+    FavoritedDatabase.favoriteDB.filteredBooks().forEach { bookSelected in
+      FavoritedDatabase.favoriteDB.clickedBook(book: bookSelected)
+    }
+    print("Book favorited")
   }
 
 }

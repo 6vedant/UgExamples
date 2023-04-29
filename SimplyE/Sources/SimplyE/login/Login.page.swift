@@ -1,6 +1,8 @@
 import ScadeKit
 import Dispatch
 
+import Foundation
+
 class LoginPageAdapter: SCDLatticePageAdapter {
 
   // page adapter initialization

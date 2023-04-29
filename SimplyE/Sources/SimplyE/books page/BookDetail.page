@@ -1,105 +1,274 @@
 <?xml  version="1.0" encoding="UTF-8" standalone="no"?>
-<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="0.6" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:graphics="http://scade.com/sdk/view/graphics" xmlns:layout="http://scade.com/sdk/layout" xmlns:navigation="http://scade.com/lattice/navigation" xmlns:widgetlayouts="http://scade.com/sdk/view/widgets/layout" xmlns:widgets="http://scade.com/sdk/view/widgets">
-  <widgets:Page name="main">
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="0.6" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:graphics="http://scade.com/sdk/view/graphics" xmlns:layout="http://scade.com/sdk/layout" xmlns:navigation="http://scade.com/lattice/navigation" xmlns:widgets="http://scade.com/sdk/view/widgets">
+  <widgets:Page name="bookDetail ">
     <minArea width="414" height="736"/>
     <location/>
     <backgroundColor Red="248" Green="248" Blue="248"/>
-    <children xsi:type="widgets:Image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDZGQjRCRUYyNkNBMTFFNDkxNDVFMDcyNTQyRUQwNDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDZGQjRCRjAyNkNBMTFFNDkxNDVFMDcyNTQyRUQwNDYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpENkZCNEJFRDI2Q0ExMUU0OTE0NUUwNzI1NDJFRDA0NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpENkZCNEJFRTI2Q0ExMUU0OTE0NUUwNzI1NDJFRDA0NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pmri+DQAAAS8SURBVHja7JxdK2xRGMfPnHPChUGHGIphmCGN8lYahdyQQi7kI/hOfALFhaSk3CLlLTZ5G2YoQ+MtjULU+befWu323uaME5PZ/v+L3Zq1n732Wr/9rGc9aymusbGxH1Rq+kkEhEVYhEVYhEVYREBYhEVYhEVYhEUEhEVYhEVYhEVYREBYhEVYhEVYhEUEhEVYhEVYhEVYREBYhEVYhEVY316/U7QbHR3F9eLiYmZmhp5FERZhERZhfc/VMMkSOT8/H41GGxoaqqqqPB6PLJp7e3sHBwdiFggE6urqbG8ZhRbKysoKCwtzc3Px8+bmJhKJaJr2+PhoNc7JyQkGg7BXzZ6cnGxvb3u93t7eXtSMj4+/9QrYoPz8/ByLxdAZdD4dsER5eXnd3d1+v1/VeHQVFRUtLS3Z3sIjq6urxkYGBwdl2Ep/dFVWVs7Ozpp4lZSU9PX1ZWVlmZqtra3d2tqy7STg9vf3o0FVg8e9utbX102d+URY+FzwBbjA7u7u3d0d/Ki9vR1dwZfPzs4GqcPDw42NDeOt5ubmo6Mj1KhGrq6ucMV3Pj09BRpxHJhheF1dXXBeZVlQUCCk4BqaLtgDX2NjI0aO9m07KaQSiQS4iF+jnaamJnQPb7m/v7d1dpN+DQwMpEKkpaUFV7xsf3/fVIl+o8dwIvn+19fXt7e3NTU1KGNOwckXFhbUrdfX1/LycnkKs0w1FY/Hd3Z2YPDy8oKfuJ6fn7tcrtLSUowqHA4r5+rp6cnPz0cBHofPIPYPDw+wgcMWFxeL2drammq8tbXV5/MB7uTk5OXlpVSiQXQA7o/2ccUUTlOAhycbfwIQsEp5ZWXFeAt9QqdRcLvdxnrbwHR2diYFhQADk9kKTGrYSsvLy9K4SXBSXG3D3+bmJq6YGfDNdMBCcLV2QsEyzjURIrdEmX+2rHDAZaQgDgsdHx9b7dENadwU4CS6YeIneYX6Hp8bsz5QGBgmKRYsDM8YjI1RWTlvim3KrIdGRkaSmCG8ZgwszK/Ozk7lbnBMOKzVARFcMjXP+ihh7RsaGpIFDoEZ8UjNa0nlPkS2mVfmZfChUEhITU9PYwWwDfYiLJFqwqbYONKC9z7ypWEhP5DAb1oN4HFvjby6utrWQ63rBhI3KdTX1zsBluxv5GoU0kVTDVJHWWeRDVg9BR5qu0RiXqOA/BP5c8bDksEAFvZG4k2I99jigYg1b1pcXJQC8ngMXuwBDvbAYZtnqfwLNJHiGykj6UfKKrvFzAjw2Ayhuwhbfl3GQarNuTHjRb2EuZCu5PbiXHNzcx0dHUhHgrqsSXUquciXgIVQNTExgWEjeMG/MNFisRh2msgYkXPJtsm0DUByj52d2BvPDwBLThSsyefU1JTpYCOhC4uG2iokl8th/zFkeHgY7vNJf1hx1OEfIp3k/XKGQVjJ1NbWJoVwOOzYDP4/5lokEonH4xKVsSBWVFSow1hN06wHEt8UViAQkENU27tysubkveG7hLz06enJ5/O53W6VJSCiI07JUa3DN9LvVVRX+t/LP4URFmERFmERFkVYhEVYhEVYhEURFmERFmERFmFRhEVYhEVYhEVYFGERFmERFmERFkVYhEVYhEVYDtVfAQYA9Kg8ERKqtwIAAAAASUVORK5CYII=" url="Assets/bookCovers/warOfWorlds.jpeg" contentPriority="false" name="heroImage">
+    <children xsi:type="widgets:NavigationBar" name="navigationBar">
+      <children xsi:type="widgets:Button" horizontalAlignment="CENTER" paddingLeft="10" name="backButton">
+        <font fontFamily="ArialMT" size="17">
+          <color Red="68" Green="106" Blue="179"/>
+        </font>
+        <layoutData xsi:type="layout:AutoLayoutData">
+          <constraints source="/0/@children.0/@children.0" target="/0/@children.0"/>
+          <constraints sourceAnchor="HEIGHT" constant="30" source="/0/@children.0/@children.0"/>
+          <constraints sourceAnchor="CENTER_Y" targetAnchor="CENTER_Y" source="/0/@children.0/@children.0" target="/0/@children.0"/>
+        </layoutData>
+        <location y="5"/>
+        <size width="58" height="30"/>
+        <contentSize width="48" height="30"/>
+      </children>
+      <children xsi:type="widgets:Label" text="Details" name="detailsLabel">
+        <font fontFamily="Arial-BoldMT" size="20">
+          <color Red="70" Green="70" Blue="70"/>
+        </font>
+        <layoutData xsi:type="layout:AutoLayoutData">
+          <constraints sourceAnchor="CENTER_X" targetAnchor="CENTER_X" source="/0/@children.0/@children.1" target="/0/@children.0"/>
+          <constraints sourceAnchor="CENTER_Y" targetAnchor="CENTER_Y" source="/0/@children.0/@children.1" target="/0/@children.0"/>
+        </layoutData>
+        <location x="174" y="9"/>
+        <size width="66" height="23"/>
+        <contentSize width="66" height="23"/>
+      </children>
+      <children xsi:type="widgets:Button" horizontalAlignment="CENTER" paddingRight="10" name="favoritedButton">
+        <font fontFamily="ArialMT" size="17">
+          <color Red="68" Green="106" Blue="179"/>
+        </font>
+        <layoutData xsi:type="layout:AutoLayoutData">
+          <constraints sourceAnchor="RIGHT" targetAnchor="RIGHT" source="/0/@children.0/@children.2" target="/0/@children.0"/>
+          <constraints sourceAnchor="HEIGHT" constant="23" source="/0/@children.0/@children.2"/>
+          <constraints sourceAnchor="CENTER_Y" targetAnchor="CENTER_Y" source="/0/@children.0/@children.2" target="/0/@children.0"/>
+        </layoutData>
+        <location x="356" y="9"/>
+        <size width="58" height="23"/>
+        <contentSize width="48" height="23"/>
+      </children>
+      <layout xsi:type="layout:AutoLayout"/>
+      <maxArea width="-1" height="-1"/>
       <location/>
-      <size width="414" height="300"/>
+      <minArea height="46"/>
+      <size width="414" height="40"/>
       <layoutData xsi:type="layout:AutoLayoutData">
         <constraints sourceAnchor="TOP" targetAnchor="TOP" source="/0/@children.0" target="/0"/>
         <constraints source="/0/@children.0" target="/0"/>
         <constraints sourceAnchor="RIGHT" targetAnchor="RIGHT" source="/0/@children.0" target="/0"/>
-        <constraints sourceAnchor="HEIGHT" constant="300" source="/0/@children.0"/>
+        <constraints sourceAnchor="HEIGHT" constant="40" source="/0/@children.0"/>
       </layoutData>
-      <backgroundColor Red="255" Green="255" Blue="255"/>
     </children>
-    <children xsi:type="widgets:List" paddingLeft="10" name="ctrlListBookCatalog" paddingRight="10">
-      <template name="template">
-        <element name="listElement">
-          <children xsi:type="widgets:RowView" paddingLeft="5" name="viewCategory" paddingRight="5" paddingTop="5" paddingBottom="5">
-            <children xsi:type="widgets:Label" text="label" paddingLeft="3" name="lbCategory" paddingBottom="1">
-              <font fontFamily="Arial-BoldMT" size="20">
-                <color Red="70" Green="70" Blue="70"/>
-              </font>
-              <layoutData xsi:type="layout:GridData" verticalAlignment="MIDDLE" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT" grabVerticalSpace="true">
-                <maxSize width="-1" height="-1"/>
-              </layoutData>
-              <location x="5" y="5"/>
-              <size width="384" height="24"/>
-              <contentSize width="46" height="23"/>
-            </children>
-            <layout xsi:type="layout:GridLayout"/>
-            <maxArea width="-1" height="-1"/>
-            <location/>
-            <minArea/>
-            <size width="394" height="34"/>
-            <layoutData xsi:type="layout:GridData" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT" grabVerticalSpace="true">
-              <maxSize width="-1" height="-1"/>
-            </layoutData>
-          </children>
-          <children xsi:type="widgets:RowView" paddingLeft="5" name="rowView" paddingRight="5" paddingTop="5" paddingBottom="5">
-            <children xsi:type="widgets:ListView" paddingLeft="5" name="listView" paddingRight="5" paddingTop="5" paddingBottom="5">
-              <children xsi:type="widgets:Image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDZGQjRCRUYyNkNBMTFFNDkxNDVFMDcyNTQyRUQwNDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDZGQjRCRjAyNkNBMTFFNDkxNDVFMDcyNTQyRUQwNDYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpENkZCNEJFRDI2Q0ExMUU0OTE0NUUwNzI1NDJFRDA0NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpENkZCNEJFRTI2Q0ExMUU0OTE0NUUwNzI1NDJFRDA0NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pmri+DQAAAS8SURBVHja7JxdK2xRGMfPnHPChUGHGIphmCGN8lYahdyQQi7kI/hOfALFhaSk3CLlLTZ5G2YoQ+MtjULU+befWu323uaME5PZ/v+L3Zq1n732Wr/9rGc9aymusbGxH1Rq+kkEhEVYhEVYhEVYREBYhEVYhEVYhEUEhEVYhEVYhEVYREBYhEVYhEVYhEUEhEVYhEVYhEVYREBYhEVYhEVY316/U7QbHR3F9eLiYmZmhp5FERZhERZhfc/VMMkSOT8/H41GGxoaqqqqPB6PLJp7e3sHBwdiFggE6urqbG8ZhRbKysoKCwtzc3Px8+bmJhKJaJr2+PhoNc7JyQkGg7BXzZ6cnGxvb3u93t7eXtSMj4+/9QrYoPz8/ByLxdAZdD4dsER5eXnd3d1+v1/VeHQVFRUtLS3Z3sIjq6urxkYGBwdl2Ep/dFVWVs7Ozpp4lZSU9PX1ZWVlmZqtra3d2tqy7STg9vf3o0FVg8e9utbX102d+URY+FzwBbjA7u7u3d0d/Ki9vR1dwZfPzs4GqcPDw42NDeOt5ubmo6Mj1KhGrq6ucMV3Pj09BRpxHJhheF1dXXBeZVlQUCCk4BqaLtgDX2NjI0aO9m07KaQSiQS4iF+jnaamJnQPb7m/v7d1dpN+DQwMpEKkpaUFV7xsf3/fVIl+o8dwIvn+19fXt7e3NTU1KGNOwckXFhbUrdfX1/LycnkKs0w1FY/Hd3Z2YPDy8oKfuJ6fn7tcrtLSUowqHA4r5+rp6cnPz0cBHofPIPYPDw+wgcMWFxeL2drammq8tbXV5/MB7uTk5OXlpVSiQXQA7o/2ccUUTlOAhycbfwIQsEp5ZWXFeAt9QqdRcLvdxnrbwHR2diYFhQADk9kKTGrYSsvLy9K4SXBSXG3D3+bmJq6YGfDNdMBCcLV2QsEyzjURIrdEmX+2rHDAZaQgDgsdHx9b7dENadwU4CS6YeIneYX6Hp8bsz5QGBgmKRYsDM8YjI1RWTlvim3KrIdGRkaSmCG8ZgwszK/Ozk7lbnBMOKzVARFcMjXP+ihh7RsaGpIFDoEZ8UjNa0nlPkS2mVfmZfChUEhITU9PYwWwDfYiLJFqwqbYONKC9z7ypWEhP5DAb1oN4HFvjby6utrWQ63rBhI3KdTX1zsBluxv5GoU0kVTDVJHWWeRDVg9BR5qu0RiXqOA/BP5c8bDksEAFvZG4k2I99jigYg1b1pcXJQC8ngMXuwBDvbAYZtnqfwLNJHiGykj6UfKKrvFzAjw2Ayhuwhbfl3GQarNuTHjRb2EuZCu5PbiXHNzcx0dHUhHgrqsSXUquciXgIVQNTExgWEjeMG/MNFisRh2msgYkXPJtsm0DUByj52d2BvPDwBLThSsyefU1JTpYCOhC4uG2iokl8th/zFkeHgY7vNJf1hx1OEfIp3k/XKGQVjJ1NbWJoVwOOzYDP4/5lokEonH4xKVsSBWVFSow1hN06wHEt8UViAQkENU27tysubkveG7hLz06enJ5/O53W6VJSCiI07JUa3DN9LvVVRX+t/LP4URFmERFmERFkVYhEVYhEVYhEURFmERFmERFmFRhEVYhEVYhEVYFGERFmERFmERFkVYhEVYhEVYDtVfAQYA9Kg8ERKqtwIAAAAASUVORK5CYII=" name="image">
-                <location x="5" y="5"/>
-                <size width="100" height="100"/>
-                <layoutData xsi:type="layout:GridData" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT">
-                  <minSize width="100" height="100"/>
-                  <maxSize width="-1" height="-1"/>
-                </layoutData>
-              </children>
-              <children xsi:type="widgets:Label" text="label" name="label " horizontalAlignment="CENTER" paddingTop="3" paddingBottom="3">
-                <font fontFamily="ArialMT" size="12">
-                  <color Red="70" Green="70" Blue="70"/>
-                </font>
-                <layoutData xsi:type="layout:GridData" row="1" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" grabHorizontalSpace="true">
-                  <maxSize width="-1" height="-1"/>
-                </layoutData>
-                <location x="42" y="105"/>
-                <size width="26" height="20"/>
-                <contentSize width="26" height="14"/>
-              </children>
-              <layout xsi:type="layout:GridLayout" rows="2"/>
-              <maxArea width="-1" height="-1"/>
-              <location x="5" y="5"/>
-              <minArea/>
-              <size width="110" height="130"/>
-              <layoutData xsi:type="layout:GridData" verticalAlignment="MIDDLE" heightConstraint="MATCH_PARENT" grabVerticalSpace="true">
-                <maxSize width="-1" height="-1"/>
-              </layoutData>
-            </children>
-            <layout xsi:type="layout:GridLayout"/>
-            <maxArea width="-1" height="-1"/>
-            <location y="34"/>
-            <minArea/>
-            <size width="394" height="140"/>
-            <layoutData xsi:type="layout:GridData" row="1" grabVerticalSpace="true" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT" heightConstraint="MATCH_PARENT">
-              <maxSize width="-1" height="-1"/>
-            </layoutData>
-          </children>
-          <layout xsi:type="layout:GridLayout" rows="2"/>
-          <maxArea width="-1" height="-1"/>
-          <location x="10"/>
-          <minArea height="45"/>
-          <size width="394" height="174"/>
-          <layoutData xsi:type="layout:GridData" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT" heightConstraint="MATCH_PARENT">
-            <minSize/>
+    <children xsi:type="widgets:ListView" paddingLeft="5" name="listBookDetails" paddingRight="5" paddingTop="5" paddingBottom="5">
+      <children xsi:type="widgets:RowView" paddingLeft="5" name="horizontalImageView" paddingRight="5" paddingTop="5" paddingBottom="5">
+        <children xsi:type="widgets:Image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDZGQjRCRUYyNkNBMTFFNDkxNDVFMDcyNTQyRUQwNDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDZGQjRCRjAyNkNBMTFFNDkxNDVFMDcyNTQyRUQwNDYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpENkZCNEJFRDI2Q0ExMUU0OTE0NUUwNzI1NDJFRDA0NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpENkZCNEJFRTI2Q0ExMUU0OTE0NUUwNzI1NDJFRDA0NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pmri+DQAAAS8SURBVHja7JxdK2xRGMfPnHPChUGHGIphmCGN8lYahdyQQi7kI/hOfALFhaSk3CLlLTZ5G2YoQ+MtjULU+befWu323uaME5PZ/v+L3Zq1n732Wr/9rGc9aymusbGxH1Rq+kkEhEVYhEVYhEVYREBYhEVYhEVYhEUEhEVYhEVYhEVYREBYhEVYhEVYhEUEhEVYhEVYhEVYREBYhEVYhEVY316/U7QbHR3F9eLiYmZmhp5FERZhERZhfc/VMMkSOT8/H41GGxoaqqqqPB6PLJp7e3sHBwdiFggE6urqbG8ZhRbKysoKCwtzc3Px8+bmJhKJaJr2+PhoNc7JyQkGg7BXzZ6cnGxvb3u93t7eXtSMj4+/9QrYoPz8/ByLxdAZdD4dsER5eXnd3d1+v1/VeHQVFRUtLS3Z3sIjq6urxkYGBwdl2Ep/dFVWVs7Ozpp4lZSU9PX1ZWVlmZqtra3d2tqy7STg9vf3o0FVg8e9utbX102d+URY+FzwBbjA7u7u3d0d/Ki9vR1dwZfPzs4GqcPDw42NDeOt5ubmo6Mj1KhGrq6ucMV3Pj09BRpxHJhheF1dXXBeZVlQUCCk4BqaLtgDX2NjI0aO9m07KaQSiQS4iF+jnaamJnQPb7m/v7d1dpN+DQwMpEKkpaUFV7xsf3/fVIl+o8dwIvn+19fXt7e3NTU1KGNOwckXFhbUrdfX1/LycnkKs0w1FY/Hd3Z2YPDy8oKfuJ6fn7tcrtLSUowqHA4r5+rp6cnPz0cBHofPIPYPDw+wgcMWFxeL2drammq8tbXV5/MB7uTk5OXlpVSiQXQA7o/2ccUUTlOAhycbfwIQsEp5ZWXFeAt9QqdRcLvdxnrbwHR2diYFhQADk9kKTGrYSsvLy9K4SXBSXG3D3+bmJq6YGfDNdMBCcLV2QsEyzjURIrdEmX+2rHDAZaQgDgsdHx9b7dENadwU4CS6YeIneYX6Hp8bsz5QGBgmKRYsDM8YjI1RWTlvim3KrIdGRkaSmCG8ZgwszK/Ozk7lbnBMOKzVARFcMjXP+ihh7RsaGpIFDoEZ8UjNa0nlPkS2mVfmZfChUEhITU9PYwWwDfYiLJFqwqbYONKC9z7ypWEhP5DAb1oN4HFvjby6utrWQ63rBhI3KdTX1zsBluxv5GoU0kVTDVJHWWeRDVg9BR5qu0RiXqOA/BP5c8bDksEAFvZG4k2I99jigYg1b1pcXJQC8ngMXuwBDvbAYZtnqfwLNJHiGykj6UfKKrvFzAjw2Ayhuwhbfl3GQarNuTHjRb2EuZCu5PbiXHNzcx0dHUhHgrqsSXUquciXgIVQNTExgWEjeMG/MNFisRh2msgYkXPJtsm0DUByj52d2BvPDwBLThSsyefU1JTpYCOhC4uG2iokl8th/zFkeHgY7vNJf1hx1OEfIp3k/XKGQVjJ1NbWJoVwOOzYDP4/5lokEonH4xKVsSBWVFSow1hN06wHEt8UViAQkENU27tysubkveG7hLz06enJ5/O53W6VJSCiI07JUa3DN9LvVVRX+t/LP4URFmERFmERFkVYhEVYhEVYhEURFmERFmERFmFRhEVYhEVYhEVYFGERFmERFmERFkVYhEVYhEVYDtVfAQYA9Kg8ERKqtwIAAAAASUVORK5CYII=" paddingTop="10" name="image">
+          <location x="5" y="5"/>
+          <size width="394" height="274"/>
+          <layoutData xsi:type="layout:GridData" horizontalAlignment="CENTER" verticalAlignment="BOTTOM" heightConstraint="MATCH_PARENT" widthConstraint="MATCH_PARENT" grabVerticalSpace="true" grabHorizontalSpace="true">
+            <minSize width="100" height="100"/>
+            <maxSize width="-1" height="-1"/>
           </layoutData>
-        </element>
-        <location/>
-        <size/>
-      </template>
-      <size width="414" height="384"/>
-      <minArea/>
-      <location y="300"/>
-      <backgroundColor Red="255" Green="255" Blue="255"/>
-      <layout xsi:type="widgetlayouts:ListLayout"/>
+        </children>
+        <layout xsi:type="layout:GridLayout"/>
+        <maxArea width="-1" height="-1"/>
+        <location x="5" y="5"/>
+        <minArea/>
+        <size width="404" height="284"/>
+        <layoutData xsi:type="layout:GridData" horizontalAlignment="CENTER" verticalAlignment="BOTTOM" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT" grabVerticalSpace="true">
+          <maxSize width="-1" height="-1"/>
+        </layoutData>
+      </children>
+      <children xsi:type="widgets:ListView" paddingLeft="5" name="viewBookInfo" paddingRight="5" paddingTop="5" paddingBottom="5">
+        <children xsi:type="widgets:Label" text="Title" name="lbBookTitle" multiline="true" horizontalAlignment="CENTER" paddingTop="5">
+          <font fontFamily="Arial-BoldMT" size="17">
+            <color/>
+          </font>
+          <layoutData xsi:type="layout:GridData" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT" grabVerticalSpace="true">
+            <maxSize width="-1" height="-1"/>
+          </layoutData>
+          <location x="5" y="5"/>
+          <size width="394" height="24"/>
+          <contentSize width="35" height="19"/>
+        </children>
+        <children xsi:type="widgets:Label" text="By Author" name="lbAuthorName" paddingTop="5">
+          <font fontFamily="ArialMT" size="17">
+            <color Red="70" Green="70" Blue="70"/>
+          </font>
+          <layoutData xsi:type="layout:GridData" row="1" grabVerticalSpace="true" horizontalAlignment="CENTER" verticalAlignment="MIDDLE">
+            <maxSize width="-1" height="-1"/>
+          </layoutData>
+          <location x="165" y="29"/>
+          <size width="74" height="24"/>
+          <contentSize width="74" height="19"/>
+        </children>
+        <children xsi:type="widgets:GridView" paddingLeft="5" name="viewBookPublisherInfo" paddingRight="5" paddingTop="5" paddingBottom="5">
+          <children xsi:type="widgets:Label" text="Pages" name="lb1" horizontalAlignment="CENTER">
+            <font fontFamily="ArialMT" size="15">
+              <color Red="70" Green="70" Blue="70"/>
+            </font>
+            <layoutData xsi:type="layout:GridData" horizontalAlignment="CENTER" verticalAlignment="MIDDLE">
+              <maxSize width="-1" height="-1"/>
+            </layoutData>
+            <location x="5" y="5"/>
+            <size width="43" height="18"/>
+            <contentSize width="43" height="18"/>
+          </children>
+          <children xsi:type="widgets:Label" text="label" name="lbPages" horizontalAlignment="CENTER">
+            <font fontFamily="Arial-BoldMT" size="15">
+              <color Red="70" Green="70" Blue="70"/>
+            </font>
+            <layoutData xsi:type="layout:GridData" row="1" horizontalAlignment="CENTER" verticalAlignment="MIDDLE">
+              <maxSize width="-1" height="-1"/>
+            </layoutData>
+            <location x="9" y="23"/>
+            <size width="35" height="18"/>
+            <contentSize width="35" height="18"/>
+          </children>
+          <children xsi:type="widgets:Label" text="Rating" name="lb2" horizontalAlignment="CENTER">
+            <font fontFamily="ArialMT" size="15">
+              <color Red="70" Green="70" Blue="70"/>
+            </font>
+            <layoutData xsi:type="layout:GridData" column="1" horizontalAlignment="CENTER" verticalAlignment="MIDDLE">
+              <maxSize width="-1" height="-1"/>
+            </layoutData>
+            <location x="73" y="5"/>
+            <size width="44" height="18"/>
+            <contentSize width="44" height="18"/>
+          </children>
+          <children xsi:type="widgets:Label" text="label" name="lbRating" horizontalAlignment="CENTER">
+            <font fontFamily="Arial-BoldMT" size="15">
+              <color Red="70" Green="70" Blue="70"/>
+            </font>
+            <layoutData xsi:type="layout:GridData" column="1" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" row="1">
+              <maxSize width="-1" height="-1"/>
+            </layoutData>
+            <location x="77" y="23"/>
+            <size width="35" height="18"/>
+            <contentSize width="35" height="18"/>
+          </children>
+          <children xsi:type="widgets:Label" text="Published" name="lb3" horizontalAlignment="CENTER">
+            <font fontFamily="ArialMT" size="15">
+              <color Red="70" Green="70" Blue="70"/>
+            </font>
+            <layoutData xsi:type="layout:GridData" column="2" horizontalAlignment="CENTER" verticalAlignment="MIDDLE">
+              <maxSize width="-1" height="-1"/>
+            </layoutData>
+            <location x="142" y="5"/>
+            <size width="66" height="18"/>
+            <contentSize width="66" height="18"/>
+          </children>
+          <children xsi:type="widgets:Label" text="label" name="lbPublished" horizontalAlignment="CENTER">
+            <font fontFamily="Arial-BoldMT" size="15">
+              <color Red="70" Green="70" Blue="70"/>
+            </font>
+            <layoutData xsi:type="layout:GridData" column="2" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" row="1">
+              <maxSize width="-1" height="-1"/>
+            </layoutData>
+            <location x="157" y="23"/>
+            <size width="35" height="18"/>
+            <contentSize width="35" height="18"/>
+          </children>
+          <children xsi:type="widgets:Label" text="Language" name="lb4" horizontalAlignment="CENTER">
+            <font fontFamily="ArialMT" size="15">
+              <color Red="70" Green="70" Blue="70"/>
+            </font>
+            <layoutData xsi:type="layout:GridData" column="3" horizontalAlignment="CENTER" verticalAlignment="MIDDLE">
+              <maxSize width="-1" height="-1"/>
+            </layoutData>
+            <location x="233" y="5"/>
+            <size width="67" height="18"/>
+            <contentSize width="67" height="18"/>
+          </children>
+          <children xsi:type="widgets:Label" text="label" name="lbLanguage" horizontalAlignment="CENTER">
+            <font fontFamily="Arial-BoldMT" size="15">
+              <color Red="70" Green="70" Blue="70"/>
+            </font>
+            <layoutData xsi:type="layout:GridData" column="3" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" row="1">
+              <maxSize width="-1" height="-1"/>
+            </layoutData>
+            <location x="249" y="23"/>
+            <size width="35" height="18"/>
+            <contentSize width="35" height="18"/>
+          </children>
+          <layout xsi:type="layout:GridLayout" columns="4" rows="2" horizontalSpacing="25"/>
+          <maxArea width="-1" height="-1"/>
+          <location x="49" y="53"/>
+          <minArea/>
+          <size width="305" height="46"/>
+          <layoutData xsi:type="layout:GridData" row="2" horizontalAlignment="CENTER" verticalAlignment="BOTTOM">
+            <maxSize width="-1" height="-1"/>
+          </layoutData>
+        </children>
+        <layout xsi:type="layout:GridLayout" rows="3"/>
+        <maxArea width="-1" height="-1"/>
+        <location x="5" y="289"/>
+        <minArea/>
+        <size width="404" height="104"/>
+        <layoutData xsi:type="layout:GridData" row="1" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT">
+          <maxSize width="-1" height="-1"/>
+        </layoutData>
+      </children>
+      <layout xsi:type="layout:GridLayout" rows="2"/>
       <maxArea width="-1" height="-1"/>
+      <location y="40"/>
+      <minArea/>
+      <size width="414" height="398"/>
       <layoutData xsi:type="layout:AutoLayoutData">
         <constraints sourceAnchor="TOP" targetAnchor="BOTTOM" source="/0/@children.1" target="/0/@children.0"/>
         <constraints source="/0/@children.1" target="/0"/>
         <constraints sourceAnchor="RIGHT" targetAnchor="RIGHT" source="/0/@children.1" target="/0"/>
+      </layoutData>
+    </children>
+    <children xsi:type="widgets:ListView" paddingLeft="10" name="viewBookDescription" paddingRight="10" paddingTop="5" paddingBottom="5">
+      <children xsi:type="widgets:Label" text="Book Overview" name="lbOverviewTitle">
+        <font fontFamily="Arial-BoldMT" size="20">
+          <color/>
+        </font>
+        <layoutData xsi:type="layout:GridData" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" grabHorizontalSpace="true">
+          <maxSize width="-1" height="-1"/>
+        </layoutData>
+        <location x="134" y="5"/>
+        <size width="145" height="23"/>
+        <contentSize width="145" height="23"/>
+      </children>
+      <children xsi:type="widgets:Label" multiline="true" paddingBottom="10" horizontalAlignment="CENTER" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." paddingTop="10" name="lbDescription">
+        <font fontFamily="ArialMT" size="15">
+          <color Red="70" Green="70" Blue="70"/>
+        </font>
+        <layoutData xsi:type="layout:GridData" row="1" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT">
+          <maxSize width="-1" height="-1"/>
+        </layoutData>
+        <location x="10" y="28"/>
+        <size width="394" height="123"/>
+        <contentSize width="394" height="103"/>
+      </children>
+      <children xsi:type="widgets:RowView" paddingLeft="5" name="horizontalReadBookButtonView" paddingRight="5" paddingTop="5" paddingBottom="10">
+        <children xsi:type="widgets:Button" text="Read Book" horizontalAlignment="CENTER" cornerRadius="20" name="readBookButton" paddingRight="5" paddingLeft="5" paddingTop="5" paddingBottom="5">
+          <font fontFamily="ArialMT" size="12">
+            <color Red="255" Green="255" Blue="255"/>
+          </font>
+          <location x="162" y="5"/>
+          <size width="70" height="24"/>
+          <contentSize width="60" height="14"/>
+          <layoutData xsi:type="layout:GridData" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" grabHorizontalSpace="true" grabVerticalSpace="true">
+            <maxSize width="-1" height="-1"/>
+          </layoutData>
+          <backgroundColor/>
+        </children>
+        <layout xsi:type="layout:GridLayout"/>
+        <maxArea width="-1" height="-1"/>
+        <location x="10" y="151"/>
+        <minArea/>
+        <size width="394" height="39"/>
+        <layoutData xsi:type="layout:GridData" row="2" horizontalAlignment="CENTER" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT">
+          <maxSize width="-1" height="-1"/>
+        </layoutData>
+      </children>
+      <layout xsi:type="layout:GridLayout" rows="3"/>
+      <maxArea width="-1" height="-1"/>
+      <location y="438"/>
+      <minArea/>
+      <size width="414" height="246"/>
+      <layoutData xsi:type="layout:AutoLayoutData">
+        <constraints sourceAnchor="TOP" targetAnchor="BOTTOM" source="/0/@children.2" target="/0/@children.1"/>
+        <constraints source="/0/@children.2" target="/0"/>
+        <constraints sourceAnchor="RIGHT" targetAnchor="RIGHT" source="/0/@children.2" target="/0"/>
       </layoutData>
     </children>
     <children xsi:type="widgets:ToolBar" name="toolBar">
@@ -189,7 +358,7 @@
         <location x="208"/>
         <minArea width="45" height="52"/>
         <size width="103" height="52"/>
-        <layoutData xsi:type="layout:GridData" column="2" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" heightConstraint="MATCH_PARENT" grabHorizontalSpace="true" grabVerticalSpace="true" widthConstraint="MATCH_PARENT">
+        <layoutData xsi:type="layout:GridData" column="2" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" heightConstraint="MATCH_PARENT" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT">
           <maxSize width="-1" height="-1"/>
         </layoutData>
       </children>
@@ -219,7 +388,7 @@
         <location x="311"/>
         <minArea width="45" height="52"/>
         <size width="103" height="52"/>
-        <layoutData xsi:type="layout:GridData" column="3" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" heightConstraint="MATCH_PARENT" grabHorizontalSpace="true" grabVerticalSpace="true" widthConstraint="MATCH_PARENT">
+        <layoutData xsi:type="layout:GridData" column="3" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" heightConstraint="MATCH_PARENT" grabHorizontalSpace="true" widthConstraint="MATCH_PARENT">
           <maxSize width="-1" height="-1"/>
         </layoutData>
       </children>
@@ -229,10 +398,10 @@
       <minArea width="100" height="52"/>
       <size width="414" height="52"/>
       <layoutData xsi:type="layout:AutoLayoutData">
-        <constraints sourceAnchor="TOP" targetAnchor="BOTTOM" source="/0/@children.2" target="/0/@children.1"/>
-        <constraints source="/0/@children.2" target="/0"/>
-        <constraints sourceAnchor="RIGHT" targetAnchor="RIGHT" source="/0/@children.2" target="/0"/>
-        <constraints sourceAnchor="BOTTOM" targetAnchor="BOTTOM" source="/0/@children.2" target="/0"/>
+        <constraints sourceAnchor="TOP" targetAnchor="BOTTOM" source="/0/@children.3" target="/0/@children.2"/>
+        <constraints source="/0/@children.3" target="/0"/>
+        <constraints sourceAnchor="RIGHT" targetAnchor="RIGHT" source="/0/@children.3" target="/0"/>
+        <constraints sourceAnchor="BOTTOM" targetAnchor="BOTTOM" source="/0/@children.3" target="/0"/>
       </layoutData>
     </children>
     <layout xsi:type="layout:AutoLayout"/>

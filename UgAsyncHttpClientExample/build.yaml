@@ -12,8 +12,8 @@ search-paths: []
 linked-libs: []
 
 ios:
-  name: UgAsyncExample
-  id: com.scade.ugasyncexample
+  name: UgAsyncHttpClientExample
+  id: com.scade.asynchttpclientexample
   device-family: iphone # iphone, ipad or universal
   supported-interface-orientations: ['portrait'] # portrait, upside_down, landscape_left or landscape_right
   supported-interface-orientationsiPad: ['portrait']
@@ -22,20 +22,20 @@ ios:
   export-method: ad-hoc # app-store, enterprise or development
   simulator:
     os: 12.1
-    output: UgAsyncExample/.build/ios-simulator
+    output: UgAsyncHttpClientExample/.build/ios-simulator
     extra-args:
     search-paths: []
     linked-libs: []
   device:
     os: 12.1
-    output: UgAsyncExample/.build/ios-device
-    product-path: UgAsyncExample/Product/ios-device
+    output: UgAsyncHttpClientExample/.build/ios-device
+    product-path: UgAsyncHttpClientExample/Product/ios-device
     extra-args:
     search-paths: []
     linked-libs: []
   mac:
-    os: 11.0
-    output:  UgAsyncExample/.build/scade-simulator
+    os: 10.11
+    output:  UgAsyncHttpClientExample/.build/scade-simulator
     extra-args:
     search-paths: []
     linked-libs: []
@@ -58,36 +58,37 @@ ios:
     NSPhotoLibraryUsageDescription: Choose a photo from your library
 
 android:
-  name: UgAsyncExample
-  id: com.scade.ugasyncexample
+  name: UgAsyncHttpClientExample
+  id: com.scade.asynchttpclientexample
   version-name: 1.0.0
   version-code: 1
   build-type: Debug
-  key-store-properties: ${env.UGEXAMPLES_ANDROID_KEYSTORE_PROPERTIES}
+  key-store-properties:
   google-api-key:
   manifest-file:
   permissions: []
+  minSdkVersion: 28
   armeabi-v7a:
-    output: UgAsyncExample/.build/android-armeabi-v7a
-    product-path: UgAsyncExample/Product/android-armeabi-v7a
+    output: UgAsyncHttpClientExample/.build/android-armeabi-v7a
+    product-path: UgAsyncHttpClientExample/Product/android-armeabi-v7a
     extra-args:
     search-paths: []
     linked-libs: []
   arm64-v8a:
-    output: UgAsyncExample/.build/android-arm64-v8a
-    product-path: UgAsyncExample/Product/android-arm64-v8a
+    output: UgAsyncHttpClientExample/.build/android-arm64-v8a
+    product-path: UgAsyncHttpClientExample/Product/android-arm64-v8a
     extra-args:
     search-paths: []
-    linked-libs: []
+    linked-libs: ["z"]
   x86:
-    output: UgAsyncExample/.build/android-x86
-    product-path: UgAsyncExample/Product/android-x86
+    output: UgAsyncHttpClientExample/.build/android-x86
+    product-path: UgAsyncHttpClientExample/Product/android-x86
     extra-args:
     search-paths: []
     linked-libs: []
   x86_64:
-    output: UgAsyncExample/.build/android-x86_64
-    product-path: UgAsyncExample/Product/android-x86_64
+    output: UgAsyncHttpClientExample/.build/android-x86_64
+    product-path: UgAsyncHttpClientExample/Product/android-x86_64
     extra-args:
     search-paths: []
     linked-libs: []

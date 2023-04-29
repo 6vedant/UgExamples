@@ -1,15 +1,25 @@
+import Dispatch
 import ScadeKit
 import ScadeUI
-import Dispatch
-#if os(Android)
-	import FoundationNetworking
-#endif
+
+import Foundation
 
 class MainPageAdapter: SCDLatticePageAdapter {
+
+  public var randomBooks: [Book] = []
+
+  public var selectedBook: Book?
+  
+  let MAX_BOOK_NAME_LENGTH = 15
 
   // page adapter initialization
   override func load(_ path: String) {
     super.load(path)
+
+    self.page?.onEnter.append(
+      SCDWidgetsEnterEventHandler { [weak self] _ in
+        self?.showRandomBook()
+      })
 
     self.fetchAdventure()
 
@@ -20,8 +30,18 @@ class MainPageAdapter: SCDLatticePageAdapter {
     self.fetchHealth()
 
     self.toolBarItem2.onClick { _ in
-      self.goToPage()
+      self.goToSearchPage()
     }
+
+    self.toolBarItem3.onClick { _ in
+      self.goToFavoritesPage()
+    }
+
+    self.toolBarItem4.onClick { _ in
+      self.goToSettingsPage()
+    }
+
+    //guard let selected = searchPage.selectedBook else {return}
 
     self.ctrlListBookCatalog.elementProvider { (genre: Genre, element) in
       guard let viewCategory = element["viewCategory", as: SCDWidgetsRowView.self],
@@ -55,14 +75,24 @@ class MainPageAdapter: SCDLatticePageAdapter {
         bookView.onClick.append(
           SCDWidgetsEventHandler { [weak book] event in
             guard let book = book else { return }
-            self.navigation?.goWith(page: "BookDetail.page", data: book, transition: .FROM_RIGHT)
+            self.navigation?.goWith(page: "BookDetail.page", data: book)
           })
 
         //bookView[label]?.text = book.volumeInfo.title ?? "no title"
         //bookView["label", as: SCDWidgetsLabel.self]?.text = book.volumeInfo.title ?? "no title"
 
         if let label = bookView["label ", as: SCDWidgetsLabel.self] {
-          label.text = book.volumeInfo.title ?? "no title"
+          let text = book.volumeInfo.title ?? "no title"
+          
+          //Solving cutoff texts in Label
+		var truncated = text
+		
+        if text.count > self.MAX_BOOK_NAME_LENGTH {
+          let index = text.index(text.startIndex, offsetBy: self.MAX_BOOK_NAME_LENGTH - 3)
+          truncated = "\(text.prefix(upTo: index))..."
+        }
+        
+          label.text = truncated
           (label.layoutData as? SCDLayoutGridData)?.maxContentWidth = 100
         }
 
@@ -82,42 +112,68 @@ class MainPageAdapter: SCDLatticePageAdapter {
 
   }
 
+  private func addRandomBooks(_ books: [Book]) {
+    self.randomBooks.append(contentsOf: books)
+    showRandomBook()
+  }
+
+  private func showRandomBook() {
+    if selectedBook != nil {
+      CatalogManager.loadDataAsync(
+        from: selectedBook?.volumeInfo.imageLinks.thumbnail ?? "no image", queue: .main
+      ) { [weak self] data in
+        guard let self = self else { return }
+
+        self.heroImage.content = data
+        self.heroImage.contentPriority = true
+      }
+    }
+
+    DispatchQueue.main.async {
+      self.selectedBook = self.randomBooks.randomElement()
+    }
+  }
+
   private func fetchAdventure() {
     CatalogManager.shared.fetchGenre(with: "Adventure", lbCategory: "Adventure") {
       [weak self] adventure in
-      DispatchQueue.main.async {
-        self?.ctrlListBookCatalog.items.append(adventure)
-      }
+      self?.ctrlListBookCatalog.items.append(adventure)
+      self?.addRandomBooks(adventure.books)
     }
   }
 
   private func fetchFantasy() {
     CatalogManager.shared.fetchGenre(with: "Fantasy", lbCategory: "Fantasy") {
       [weak self] fantasy in
-      DispatchQueue.main.async {
-        self?.ctrlListBookCatalog.items.append(fantasy)
-      }
+      self?.ctrlListBookCatalog.items.append(fantasy)
+      self?.addRandomBooks(fantasy.books)
     }
   }
 
   private func fetchHorror() {
     CatalogManager.shared.fetchGenre(with: "Horror", lbCategory: "Horror") { [weak self] horror in
-      DispatchQueue.main.async {
-        self?.ctrlListBookCatalog.items.append(horror)
-      }
+      self?.ctrlListBookCatalog.items.append(horror)
+      self?.addRandomBooks(horror.books)
     }
   }
 
   private func fetchHealth() {
     CatalogManager.shared.fetchGenre(with: "Health", lbCategory: "Health") { [weak self] health in
-      DispatchQueue.main.async {
-        self?.ctrlListBookCatalog.items.append(health)
-      }
+      self?.ctrlListBookCatalog.items.append(health)
+      self?.addRandomBooks(health.books)
     }
   }
 
-  func goToPage() {
+  func goToSearchPage() {
     self.navigation?.go(page: "search.page")
+  }
+
+  func goToFavoritesPage() {
+    self.navigation?.go(page: "favorited.page")
+  }
+
+  func goToSettingsPage() {
+    self.navigation?.go(page: "settings.page")
   }
 
 }

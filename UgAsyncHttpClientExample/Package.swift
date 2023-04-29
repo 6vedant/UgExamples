@@ -1,33 +1,33 @@
 // swift-tools-version:5.3
+
 import PackageDescription
 import Foundation
-#if os(Android)
-  import FoundationNetworking
-#endif
 
 let SCADE_SDK = ProcessInfo.processInfo.environment["SCADE_SDK"] ?? ""
 
 let package = Package(
-    name: "SimplyE",
+    name: "UgAsyncHttpClientExample",
     platforms: [
-        .macOS(.v10_14)
+        .macOS(.v11)
     ],
     products: [
         .library(
-            name: "SimplyE",
+            name: "UgAsyncHttpClientExample",
             type: .static,
             targets: [
-                "SimplyE"
+                "UgAsyncHttpClientExample"
             ]
         )
     ],
     dependencies: [
-      .package(name: "ScadeExtensions", url: "https://github.com/scade-platform/ScadeExtensions", .branch("main")),  
+        .package(url: "https://github.com/swift-server/async-http-client.git", from: "1.9.0")
     ],
     targets: [
         .target(
-            name: "SimplyE",
-            dependencies: ["ScadeExtensions"],
+            name: "UgAsyncHttpClientExample",
+            dependencies: [
+                .product(name: "AsyncHTTPClient", package: "async-http-client")
+            ],
             exclude: ["main.page"],
             swiftSettings: [
                 .unsafeFlags(["-F", SCADE_SDK], .when(platforms: [.macOS, .iOS])),
